@@ -7,5 +7,5 @@ https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-08-04/
 
 See [Interactive Map](https://learnlab.com.hr/TidyTuesday20200804/EUEnergy2018.html). Click on chart to see specific country data. 
 
-Visualization
+Screenshot
 ![Screenshot](EUEnergy2018.png)
