@@ -14,7 +14,7 @@ library(webshot)
 # Import data
 tuesdata <- tidytuesdayR::tt_load('2020-08-04')
 energy_types <- tuesdata$energy_types
-countries <- data.table::fread("countries.csv")
+countries <- data.table::fread("data/countries.csv")
 
 # Explore dataset
 skim(energy_types)
@@ -43,7 +43,8 @@ EUEnergy2018 <- leaflet()%>% addProviderTiles(providers$CartoDB) %>% addMinichar
   energy_types_country_ajusted$longitude, energy_types_country_ajusted$latitude,
   chartdata = EnergyTypes,
   colorPalette = colors,
-  showLabels = TRUE, 
+  labelMinSize = 7,
+  showLabels = FALSE,
   width = 60, height = 60
 ) 
 EUEnergy2018 
