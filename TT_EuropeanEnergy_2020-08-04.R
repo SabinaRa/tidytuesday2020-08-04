@@ -30,7 +30,7 @@ skim(energy_types_country)
 top20 <- energy_types_country %>% group_by(country_name) %>% summarise(sum = sum(`2018`)) %>% arrange(desc(sum)) %>% head(20)
 
 # Ajusting data for 2018
-energy_types_country_ajusted <- energy_types_country %>% select(country_name,type,"2018", longitude, latitude)  %>% pivot_wider(names_from = type, values_from = "2018") %>% filter(country_name %in% top20$country_name) %>% mutate(Renewable = Hydro + `Pumped hydro power` + Wind + Solar + Geothermal + Other)
+energy_types_country_ajusted <- energy_types_country %>% select(country_name,type,"2018", longitude, latitude)  %>% pivot_wider(names_from = type, values_from = "2018") %>% filter(country_name %in% top20$country_name) %>% mutate(Renewable = Hydro + Wind + Solar + Geothermal)
 
 # Data preparing for genereting charts 
 EnergyTypes <- energy_types_country_ajusted %>% select(`Conventional thermal`, Nuclear,Renewable)
